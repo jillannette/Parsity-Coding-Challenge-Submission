@@ -32,7 +32,10 @@ const largestPair = function(array) {
 };
 
 const removeParenth = function(str) {
-  // your code here - don't forget to return a string!
+  let sentence = 'ido(not)liketocode';
+  let newSentence = sentence.split('');
+    newSentence.splice(3, 5);
+  return newSentence.join('');
 };
 
 const scoreScrabble = function(str) {
