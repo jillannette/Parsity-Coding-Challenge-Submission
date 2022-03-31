@@ -5,7 +5,6 @@ const findSum = function(array) {
 };
 
 const findFrequency = function(array) {
- const findFrequency = function(array) {
   const count = {};
   let most;
   let least;
