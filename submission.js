@@ -9,7 +9,11 @@ const findFrequency = function(array) {
 };
 
 const isPalindrome = function(str) {
-  // your code here - don't forget to return a boolean!
+  str = str.toLowerCase();
+    for (var i = 0; i <= (str.length / 2); i++) {
+      if (str[i] != str[str.length - (i + 1)]) return false;
+  }
+      return true;
 };
 
 const largestPair = function(array) {
