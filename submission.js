@@ -5,7 +5,35 @@ const findSum = function(array) {
 };
 
 const findFrequency = function(array) {
-  // your code here - don't forget to return an object!
+ const findFrequency = function(array) {
+  const count = {};
+  let most;
+  let least;
+  most = array.reduce((acc, val, ind) => {
+    count[val] = (count[val] || 0) + 1;
+    if (!ind || count[val] > count[acc[0]]) {
+      return [val];
+  };
+  if (val !== acc[0] && count[val] === count[acc[0]]) {
+    acc.push(val);
+  };
+    
+  least = array.reduce((acc, val, ind) => {
+    count[val] = (count[val] || 0);
+    if (ind || count[val] < count[acc[0]]) {
+      return [val];
+    };
+    if (val === acc[0] && count[val] === count[acc[0]]) {
+      acc.push(val);
+    }
+  })
+  
+  return acc;
+ 
+}, undefined);
+return {
+  most, least
+}
 };
 
 const isPalindrome = function(str) {
