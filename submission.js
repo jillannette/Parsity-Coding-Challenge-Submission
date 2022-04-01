@@ -59,7 +59,7 @@ const largestPair = function(array) {
 };
 
 const removeParenth = function(str) {
-  let string = 'ido(not)liketocode';
+  let string = ('ido(not)liketocode');
   string = string.toLowerCase();
   let newStr = string.replace('(not)', '');
   return newStr;
