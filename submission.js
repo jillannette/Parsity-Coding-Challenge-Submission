@@ -56,8 +56,7 @@ const largestPair = function(array) {
 };
 
 const removeParenth = function(str) {
-  let phrase = ("'ido(not)liketocode'");
-  phrase = phrase.replace(/ *\([^)]*\) */g, "").trim()
+  phrase = str.replace(/ *\([^)]*\) */g, "").trim()
   return phrase;
 };
 
