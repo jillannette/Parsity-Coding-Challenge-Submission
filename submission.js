@@ -59,14 +59,14 @@ const largestPair = function(array) {
 };
 
 const removeParenth = function(str) {
-  let sentence = 'ido(not)liketocode';
-  let newSentence = sentence.split('');
-    newSentence.splice(3, 5);
-  return newSentence.join('');
+  let string = 'ido(not)liketocode';
+  string = string.toLowerCase();
+  let newStr = string.replace('(not)', '');
+  return newStr;
 };
 
 const scoreScrabble = function(str) {
-  string = string.toLowerCase();
+  str = str.toLowerCase();
   let points = {
   a: 1,
   e: 1,
@@ -97,8 +97,8 @@ const scoreScrabble = function(str) {
 },
 sum = 0; 
 
-  for (i = 0; i < string.length; i++) {
-    sum += points[string[i]] || 0;
+  for (i = 0; i < str.length; i++) {
+    sum += points[str[i]] || 0;
   }
   return sum;
 };
