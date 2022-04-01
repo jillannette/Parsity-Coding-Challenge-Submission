@@ -4,36 +4,33 @@ const findSum = function(array) {
   return sum;
 };
 
-const findFrequency = function(array) {
-  const count = {};
-  let most;
-  let least;
-  most = array.reduce((acc, val, ind) => {
-    count[val] = (count[val] || 0) + 1;
-    if (!ind || count[val] > count[acc[0]]) {
-      return [val];
-  };
-  if (val !== acc[0] && count[val] === count[acc[0]]) {
-    acc.push(val);
-  };
-    
-  least = array.reduce((acc, val, ind) => {
-    count[val] = (count[val] || 0);
-    if (ind || count[val] < count[acc[0]]) {
-      return [val];
-    };
-    if (val === acc[0] && count[val] === count[acc[0]]) {
-      acc.push(val);
-    }
-  })
+const findFrequency = function(arr) {
+  let compare = "";
+  let mostFreq = "";
+  let leastFreq = "";
   
-  return acc;
- 
-}, undefined);
-return {
-  most, least
-}
-};
+  arr.reduce((acc, val) => {
+    if(val in acc){               
+       acc[val]++;                
+    }else{
+       acc[val] = 1;      
+    }
+    if(acc[val] > compare){   
+                              
+       compare = acc[val];    
+       mostFreq = val;        
+    }
+    if(acc[val] < compare){
+
+      compare = acc[val];
+      leastFreq = val;
+    }
+    return acc;
+  }, {})
+  console.log(`most: '${mostFreq}', least: '${leastFreq}'`);
+ };
+let data = ['a', 'b', 'c', 'a', 'b', 'c', 'a', 'a', 'd'];
+
 
 const isPalindrome = function(str) {
   str = str.toLowerCase();
