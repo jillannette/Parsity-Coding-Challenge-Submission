@@ -59,10 +59,9 @@ const largestPair = function(array) {
 };
 
 const removeParenth = function(str) {
-  let string = ("'ido(not)liketocode'");
-  string = string.toLowerCase();
-  let newStr = string.replace('(not)', '');
-  return newStr;
+  let phrase = ("'ido(not)liketocode'");
+  phrase = phrase.replace(/ *\([^)]*\) */g, "").trim()
+  return phrase;
 };
 
 const scoreScrabble = function(str) {
